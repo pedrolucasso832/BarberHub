@@ -4,8 +4,64 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BarberHub</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    
+    <header class="header">
+        <h1>BarberHub</h1>
+
+        <nav>
+            <a href="#services">Serviços</a>
+            <a href="#Barbers">Barbeiros</a>
+            <a href="#booking">Agendar</a>
+        </nav>
+    </header>
+    <main>
+        <section class="hero">
+            <div>
+                <span>Barbearia Premium</span>
+                <h2>Seu estilo começa no horário certo.</h2>
+                <p>Agende corte, barba e acabamento com os melhores profissionais da BarberHub</p>
+                <a href="#booking" class="button">Agendar agora</a>
+            </div>
+        </section>
+
+        <section id="services" class="section">
+            <h2>Serviços</h2>
+            <div id="servicesList" class="grid"></div>
+        </section>
+
+        <section id="barbers" class="section">
+            <h2>Barbeiros</h2>
+            <div id="barbersList" class="grid"></div>
+        </section>
+
+        <section id="booking" class="section">
+            <h2>Agendamento</h2>
+
+            <form id="bookingForm" class="form">
+                <input type="text" name="clienteName" placeholder="Digite seu Nome" required>
+                <input type="tel" name="phone" placeholder="Digite seu telefone para cotato" required>
+                
+                <select name="serviceId" id="serviceSelect" required>
+                    <option value="">Selecione um serviço</option>
+                </select>
+
+                <select name="barberID" id="barberSelect">
+                    <option value="">Selecione um barbeiro</option>
+                </select>
+
+                <input type="date" name="date" required>
+                <input type="time" name="time" required>
+
+                <button type="submit" class="buttom">Confirmar agendamento</button>
+            </form>
+
+            <p id="bookingMessage"></p>
+        </section>
+    </main>
+
+    <script src="app.js"></script>
 </body>
 </html>
