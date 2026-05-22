@@ -4,16 +4,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BarberHub</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <header class="header">
         <h1>BarberHub</h1>
 
-        <nav>
+        <button class="menu-toggle" id="menuToggle" type="button" aria-label="Abrir menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+
+        <nav class="nav-menu" id="navMenu">
             <a href="#services">Serviços</a>
-            <a href="#Barbers">Barbeiros</a>
+            <a href="#barbers">Barbeiros</a>
             <a href="#booking">Agendar</a>
         </nav>
     </header>
@@ -41,21 +47,23 @@
             <h2>Agendamento</h2>
 
             <form id="bookingForm" class="form">
-                <input type="text" name="clienteName" placeholder="Digite seu Nome" required>
+                
+                <input type="text" name="clientName" placeholder="Digite seu Nome" required>
+                
                 <input type="tel" name="phone" placeholder="Digite seu telefone para cotato" required>
                 
                 <select name="serviceId" id="serviceSelect" required>
                     <option value="">Selecione um serviço</option>
                 </select>
 
-                <select name="barberID" id="barberSelect">
+                <select name="barberId" id="barberSelect">
                     <option value="">Selecione um barbeiro</option>
                 </select>
 
                 <input type="date" name="date" required>
                 <input type="time" name="time" required>
 
-                <button type="submit" class="buttom">Confirmar agendamento</button>
+                <button type="submit" class="button">Confirmar agendamento</button>
             </form>
 
             <p id="bookingMessage"></p>
@@ -63,5 +71,7 @@
     </main>
 
     <script src="app.js"></script>
+    
+
 </body>
 </html>
