@@ -1,0 +1,12 @@
+[
+  {
+    "id": 1,
+    "clientName": "Pedro",
+    "phone": "85999999999",
+    "serviceId": 1,
+    "barberId": 1,
+    "date": "2026-05-26",
+    "time": "10:30",
+    "status": "agendado"
+  }
+]
