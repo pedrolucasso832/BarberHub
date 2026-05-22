@@ -41,13 +41,13 @@ const barbers = [
 
     {
         id: 1,
-        name: "Alex",
+        name: "Barbeiro 1",
         specialty: "Degradê e cortes modernos",
         rating: 4.9,
     },
     {
         id: 2,
-        name: "Fideles",
+        name: "Barbeiro 2",
         specialty: "Degradê e cortes modernos",
         rating: 4.9,
     },
