@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BarberHub|Painel Administrativo</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <main class="admin-layout">
+        
+        <aside class="admin-sidebar" id="adminSidebar">
+            <h1>BarberHub</h1>
+
+            <nav>
+                <a href="#dashboard">Dashboard</a>
+                <a href="#appointments">Agendamentos</a>
+                <a href="#finance">Finanças</a>
+                <a href="#reports">Relatórios</a>
+                <a href="#reviews">Avaliações</a>
+                <a href="index.html">Site</a>
+            </nav>
+        </aside>
+
+        <section class="admin-content">
+
+            <button class="admin-menu-toggle" id="adminMenuToggle" type="button" aria-label="Abrir menu administrativo">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <header class="admin-topbar">
+                <div>
+                    <span>Painel administrativo</span>
+                    <h2>Visão geral da sua barbearia</h2>
+                </div>
+            </header>
+
+            <section id="dashboard" class="admin-section">
+                <h3>Dashboard</h3>
+
+                <div class="admin-cards">
+                    <article class="metric-card">
+                        <span>Agendamentos</span>
+                        <strong id="totalAppointments">0</strong>
+                    </article>
+
+                    <article class="metric-card">
+                        <span>Faturamento</span>
+                        <strong id="totalRevenue">R$ 0</strong>
+                    </article>
+
+                    <article class="metric-card">
+                        <span>Ticket médio</span>
+                        <strong id="averageTicket">R$ 0</strong>
+                    </article>
+                </div>
+            </section>
+
+            <section id="appointments" class="admin-section">
+                <div class="admin-section-header">
+                    <h3>Agendamentos</h3>
+
+                    <div class="admin-filters">
+                        <input type="date" id="filterDate">
+                        <select id="filterStatus">
+                            <option value="">Todos os status</option>
+                            <option value="agendado">Agendado</option>
+                            <option value="confirmado">Confirmado</option>
+                            <option value="concluido">Concluido</option>
+                            <option value="cancelado">Cancelado</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="admin-table-wrapper">
+                    <table class="admin-table">
+                        <thead>
+                            <tr>
+                                <th>Cliente</th>
+                                <th>Serviço</th>
+                                <th>Barbeiro</th>
+                                <th>Data</th>
+                                <th>Status</th>
+                                <th>Ações</th>
+                            </tr>
+                        </thead>
+                        <tbody id="appointmentsTable"></tbody>
+                    </table>
+                </div>
+            </section>
+
+            <section id="finace" class="admin-section">
+                <h3>Finanças</h3>
+                <div id="financeReport" class="report-grid"></div>
+            </section>
+
+            <section id="reports" class="admin-section">
+                <h3>Relatórios</h3>
+                <div id="generalReports" class="report-grid"></div>
+            </section>
+
+            <section id="reviews" class="admin-section">
+                <h3>Avaliações</h3>
+                <div id="reviewsList" class="report-grid"></div>
+            </section>
+        </section>
+    </main>
+
+    <script src="admin.js"></script>
+</body>
+
+</html>
