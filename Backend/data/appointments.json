@@ -8,5 +8,15 @@
     "date": "2026-05-26",
     "time": "10:30",
     "status": "agendado"
+  },
+  {
+    "id": 2,
+    "clientName": "Pedro Lucas ",
+    "phone": "(83) 9 8794-0269",
+    "serviceId": 1,
+    "barberId": 1,
+    "date": "2026-05-23",
+    "time": "10:00",
+    "status": "agendado"
   }
 ]

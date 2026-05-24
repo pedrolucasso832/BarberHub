@@ -1,12 +1,16 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BarberHub</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
     <header class="header">
         <h1>BarberHub</h1>
@@ -21,6 +25,7 @@
             <a href="#services">Serviços</a>
             <a href="#barbers">Barbeiros</a>
             <a href="#booking">Agendar</a>
+            <a href="admin.html">Painel</a>
         </nav>
     </header>
     <main>
@@ -47,16 +52,16 @@
             <h2>Agendamento</h2>
 
             <form id="bookingForm" class="form">
-                
+
                 <input type="text" name="clientName" placeholder="Digite seu Nome" required>
-                
+
                 <input type="tel" name="phone" placeholder="Digite seu telefone para cotato" required>
-                
+
                 <select name="serviceId" id="serviceSelect" required>
                     <option value="">Selecione um serviço</option>
                 </select>
 
-                <select name="barberId" id="barberSelect">
+                <select name="barberId" id="barberSelect" required>
                     <option value="">Selecione um barbeiro</option>
                 </select>
 
@@ -71,7 +76,8 @@
     </main>
 
     <script src="app.js"></script>
-    
+
 
 </body>
+
 </html>

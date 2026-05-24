@@ -38,7 +38,7 @@ document.addEventListener("DOMContentLoaded", () => {
             const option = document.createElement("option");
             option.value = service.id;
             option.textContent = `${service.name} - R$ ${service.price}`;
-            
+
             serviceSelect.appendChild(option);
         });
     }
@@ -49,7 +49,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         barbersList.innerHTML = "";
 
-        barbers.forEach((barber) =>{
+        barbers.forEach((barber) => {
             const card = document.createElement("div");
             card.classList.add("card")
 
@@ -69,9 +69,54 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
+    const bookingForm = document.getElementById("bookingForm");
+    const bookingMessage = document.getElementById("bookingMessage");
+
+    bookingForm.addEventListener("submit", async (Event) => {
+        Event.preventDefault();
+
+        const formData = new FormData(bookingForm);
+
+        const appointment = {
+            clientName: formData.get("clientName"),
+            phone: formData.get("phone"),
+            serviceId: Number(formData.get("serviceId")),
+            barberId: Number(formData.get("barberId")),
+            date: formData.get("date"),
+            time: formData.get("time"),
+        };
+
+        try {
+            const response = await fetch(`${API_URL}/appointments`, {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify(appointment),
+            });
+
+            const data = await response.json();
+
+            if (!response.ok) {
+                bookingMessage.textContent = data.message || "Erro ao criar agendamento.";
+                bookingMessage.className = "error";
+                return;
+            }
+            bookingMessage.textContent = "Agendamento criado com sucesso!";
+            bookingMessage.className = "success";
+
+            bookingForm.reset();
+        } catch (error) {
+            bookingMessage.textContent = "Não foi possível conectar ao servidor.";
+            bookingMessage.className = "error";
+        }
+    });
+
     loadServices();
     loadBarbers();
-})
+});
+
+
 
 
 
